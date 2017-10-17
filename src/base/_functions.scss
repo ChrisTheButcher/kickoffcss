@@ -1,0 +1,29 @@
+@function strip-units($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+@function rem($pxval, $base: $text-base) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1rem;
+}
+
+@function em($pxval, $base: $text-base) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1em;
+}

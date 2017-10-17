@@ -1,0 +1,25 @@
+@mixin generate-btn($bg: $color-primary, $color: white) {
+    @extend %btn; 
+    background-color: $bg;
+    color: $color;
+    font-family: $font-btn;
+
+    &:hover { background-color: darken($bg, 5%); }
+    &:active { background-color: darken($bg, 10%); }
+}
+
+.btn {
+    &, &.type--default { @include generate-btn($color-grey-300, $color-grey-600); }
+    &.type--primary { @include generate-btn($color-primary, white); }
+    &.type--secondary { @include generate-btn($color-secondary, white); }
+    &.type--tertiary { @include generate-btn($color-grey-600, white); }        
+    &.type--light { @include generate-btn($color-grey-100, $color-grey-600); }        
+    
+    &.type--xs { font-size: rem(14); padding: rem(10) rem(17.5); }
+    &.type--sm { font-size: rem(16); padding: rem(12.5) rem(25); }
+    &, &.type--md { font-size: rem(18); padding: rem(15), rem(40); }
+    &.type--lg { font-size: rem(20); padding: rem(17.5) rem(50); }
+    &.type--xl { font-size: rem(24); padding: rem(20) rem(60); }
+    
+    &.type--block { display: block; width: 100%; }
+}

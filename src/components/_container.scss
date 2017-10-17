@@ -1,0 +1,11 @@
+.container {
+    margin: auto;
+    max-width: 960px;
+    width: 100%;
+
+    &.type--xs { max-width: 500px; }
+    &.type--s { max-width: 620px; }
+    &.type--m { max-width: 830px; }
+    &.type--l {max-width: 1100px;}
+    &.type--xl { max-width: 1300px; }
+}

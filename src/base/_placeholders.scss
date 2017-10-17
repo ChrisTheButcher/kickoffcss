@@ -1,0 +1,37 @@
+%clearfix {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+%btn-reset {
+    overflow: visible;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    text-align: left;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: inherit;
+    font-weight: inherit;
+    
+    &, &:hover, &:active, &:focus {
+        outline: none;
+    }
+}
+
+%btn {
+    @extend %btn-reset; 
+    padding: rem(15) rem(40);
+    line-height: 1;
+    transition: background-color .1s ease;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}

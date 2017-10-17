@@ -1,0 +1,27 @@
+$debug: true;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$text-base: 18px;
+
+$color-primary: #8bc344;
+$color-secondary: #456fb5;
+
+$color-grey-100: #f5f5f5;
+$color-grey-300: #bebebe;
+$color-grey-500: #888;
+$color-grey-600: #666;
+$color-grey-800: #333;
+$color-grey-900: #111;
+
+$color-body: $color-grey-900;
+$color-muted: $color-grey-500;
+
+$font-body: sans-serif;
+$font-headings: $font-body;
+$font-btn: $font-body;

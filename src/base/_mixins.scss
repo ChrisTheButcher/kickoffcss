@@ -1,0 +1,73 @@
+@mixin bp($width, $minmax: min) {
+    @media screen and (#{$minmax}-width: $width) {
+        @content;
+    }
+}
+
+@mixin clearfix {
+    &:after {
+        @extend %clearfix;
+    }
+}
+
+@mixin grid-row($col-gutter: 0) {
+    @include clearfix;
+    margin-left:-$col-gutter / 2;
+    margin-right:-$col-gutter / 2;
+}
+
+@mixin grid-col($col-span:6, $col-total:12, $col-gutter: 0){
+    width:percentage($col-span / $col-total);
+    float:left;
+    padding-left:$col-gutter / 2;
+    padding-right:$col-gutter / 2;
+}
+
+// Position
+@mixin abs($top: 0, $right: $top, $bottom: $top, $left: $top, $z-index: null) {
+    position:absolute;
+    top:$top; right:$right; bottom:$bottom; left:$left;
+
+    @if $z-index {
+        z-index: $z-index
+    }
+}
+
+@mixin fxd($top:0, $right: $top, $bottom: $top, $left: $top, $z-index: null) {
+    position:fixed;
+    top:$top; right:$right; bottom:$bottom; left:$left;
+
+    @if $z-index {
+        z-index: $z-index
+    }
+}
+
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+@mixin h {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 { 
+        @content; 
+    }
+}
+
+@mixin reset-space {
+    margin:0;
+    padding:0;
+}
+
+@mixin square($width: 100%, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin circle($width: 100%, $height: $width) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+}

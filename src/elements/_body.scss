@@ -1,0 +1,19 @@
+body {
+    color: $color-body;
+
+    @if $debug {
+        &:after {
+            @include fxd(null, null, 1rem, 1rem, 999);
+            padding: .25rem;
+            background: rgba(black, .5);
+            line-height: 1;
+            color: white;
+            content: 'xs: 0px';
+            @include bp($sm) { content: 'sm: #{$sm}' }
+            @include bp($md) { content: 'md: #{$md}' }
+            @include bp($lg) { content: 'lg: #{$lg}' }
+            @include bp($xl) { content: 'xl: #{$xl}' }
+            @include bp($xxl) { content: 'xxl: #{$xxl}' }
+        }
+    }
+}

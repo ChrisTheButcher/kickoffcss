@@ -1,0 +1,18 @@
+%h1 { font-size: em(48); }
+%h2 { font-size: em(36); }
+%h3 { font-size: em(24); }
+%h4 { font-size: em(20); }
+%h5 { font-size: em(19); }
+%h6 { font-size: em(18); }
+
+@include h {
+    font-family: $font-headings;
+    margin: 0 0 .62em;
+}
+
+h1, .h1 { @extend %h1; }
+h2, .h2 { @extend %h2; }
+h3, .h3 { @extend %h3; }
+h4, .h4 { @extend %h4; }
+h5, .h5 { @extend %h5; }
+h6, .h6 { @extend %h6; }
